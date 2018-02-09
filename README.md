@@ -13,6 +13,7 @@ https://github.com/ruotianluo/pytorch-faster-rcnn
 Step 3: Revise the Faster RCNN project to realize vehicle detection and vehicle orientation detection
 The corresponding code has been uploaded. 
 Implementation details:
+
 1° We should change the class types that are needed to recognize in lib/datasets/pascal_voc.py, and modify the function _load_pascal_annotation(self, index) to add your data information.
 
 2° It is much important to understand the usage/package of training/testing data in Faster RCNN project. The approximate procedure is "data+annotation+affiliated info" ---> "roidb" ---> "blobs" ---> "training data and label". Only understand its machenism can we add the training data that we want flexiblily. The relating files/functions are lib/datasets/imdb.py/append_flipped_images(self), roi_data_layer/minibatch.py, nets/network.py/_predict(self)/_region_proposal(self, net_conv)/_proposal_target_layer(self, rois, roi_scores)/proposal_target_layer()/_sample_rois()...
